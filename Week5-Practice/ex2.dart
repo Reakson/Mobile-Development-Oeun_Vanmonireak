@@ -1,9 +1,24 @@
 // import 'package:flutter/material.dart';
 
-// class FavoriteCard extends StatelessWidget {
+// class FavoriteCard extends StatefulWidget {
 //   final bool isFavorite;
 
 //   const FavoriteCard({super.key, required this.isFavorite});
+
+//   @override
+//   State<FavoriteCard> createState() {
+//     return _FavoriteCardState();
+//   }
+// }
+
+// class _FavoriteCardState extends State<FavoriteCard> {
+//   late bool isFavorite;
+
+//   @override
+//   void initState() {
+//     super.initState();
+//     isFavorite = widget.isFavorite;
+//   }
 
 //   @override
 //   Widget build(BuildContext context) {
@@ -34,10 +49,15 @@
 //             ),
 //           ),
 //           IconButton(
-//             onPressed: () => {},
+//             onPressed: () {
+//               setState(() {
+//                 isFavorite = !isFavorite;
+//               });
+//             },
 //             icon: Icon(
 //               isFavorite ? Icons.favorite : Icons.favorite_border,
-//               color: isFavorite ? Colors.red : Colors.grey),
+//               color: isFavorite ? Colors.red : Colors.grey,
+//             ),
 //           ),
 //         ],
 //       ),
@@ -54,10 +74,11 @@
 //         backgroundColor: Colors.blue,
 //         title: const Text("Favorite cards"),
 //       ),
-//       body: Column(children: [
+//       body: Column(
+//         children: [
 //           FavoriteCard(isFavorite: true),
 //           FavoriteCard(isFavorite: false),
-//           FavoriteCard(isFavorite: true)
+//           FavoriteCard(isFavorite: true),
 //         ],
 //       ),
 //     ),
